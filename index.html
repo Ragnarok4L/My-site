@@ -2,7 +2,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ESSENCIAL pro celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Meu Site</title>
+
     <style>
         body {
             margin: 0;
@@ -19,22 +24,27 @@
 
         nav {
             background-color: #555;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
             padding: 10px;
-            text-align: center;
         }
 
         nav a {
             color: white;
-            margin: 0 10px;
             text-decoration: none;
             font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
         }
 
         nav a:hover {
-            color: #ffd700;
+            background-color: #777;
         }
 
         .container {
+            max-width: 900px;
+            margin: auto;
             padding: 20px;
         }
 
@@ -51,12 +61,46 @@
             color: white;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        }
+
+        /* =======================
+           📱 MOBILE DE VERDADE
+        ======================== */
+        @media screen and (max-width: 600px) {
+
+            body {
+                background-color: #e9e9e9;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            nav a {
+                background-color: #444;
+                margin: 5px 10px;
+                text-align: center;
+                padding: 12px;
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .card {
+                font-size: 14px;
+                padding: 12px;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -65,22 +109,20 @@
 </header>
 
 <nav>
-    <a href="https://www.google.com" target="_blank">Início</a>
-    <a href="https://pt.wikipedia.org/wiki/HTML" target="_blank">Sobre</a>
-    <a href="https://wa.me/5511999999999" target="_blank">Contato</a>
+    <a href="#">Início</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
 </nav>
 
 <div class="container">
     <div class="card">
         <h2>Bem-vindo</h2>
         <p>Esse é um site simples feito em HTML e CSS.</p>
-        <a href="https://www.google.com" target="_blank">Clique aqui para visitar um site</a>
     </div>
 
     <div class="card">
         <h2>Sobre</h2>
         <p>Ainda em andamento.</p>
-        <a href="mailto:seuemail@email.com">Enviar email</a>
     </div>
 </div>
 
